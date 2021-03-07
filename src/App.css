@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-logo {
@@ -35,4 +36,35 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.myAppRoutes{
+  background-color: azure;
+  padding: 1em;
+  margin: .5em ;
+  margin-right: 2.5em;
+  border: 1px solid #000;
+  position: relative;
+  top: 1px;
+  left :1em;
+  height: 600px;
+
+}
+
+#collasible-nav-dropdown div{
+  background-color: #282c34;
+}
+.dropdown-menu .nav-link{
+  color: #ff6f00  !important;
+
+}
+
+.dropdown-menu .nav-link:hover{
+  color: floralwhite  !important;
+  background-color: #282c34;
+  border: 2px solid #282c34;
+}
+
+.bg-info {
+  background-color:#EF5354 !important;
 }
