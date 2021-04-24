@@ -34,6 +34,11 @@ import TodoList from "./Components/TodoList";
 function App() {
     return (
         <div className="App">
+
+
+
+
+
             <Router>
 
                 <Container className={"container"}>
@@ -44,7 +49,7 @@ function App() {
                         <ul className="sidebar-navigation">
                             <li className="header">Navigation</li>
                             <li>
-                                <a href="/ToDoList">
+                                <a href="ToDoList">
                                     <i className="fa fa-home" aria-hidden="true"></i> MY ACTIVITIES
                                 </a>
                             </li>
@@ -137,6 +142,9 @@ function App() {
 
             </Router>
             <HigherOrderComponent></HigherOrderComponent>
+
+
+
 
 
         </div>
