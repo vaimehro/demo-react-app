@@ -79,18 +79,27 @@
   background:  #242B2E;
   color: #fff;
 }
+.container{
+  position: relative;
+}
 
 .content-container {
-
-
+  position: relative;
+  left: 2em;
+  top: 1em;
   min-height:calc(100vh - (120px));
+
+}
+.nav-bar-app{
+  position: relative;
+  left: 2em;
 
 }
 
 .sidebar-logo {
   padding: 10px 15px 10px 30px;
   font-size: 20px;
-  background-color: #2574A9;
+  background-color: #5DA3FA;
 }
 
 .sidebar-navigation {
@@ -126,7 +135,7 @@
 }
 
 .sidebar-navigation li::before {
-  background-color: #46B2E0;
+  background-color: #5DA3FA;
   position: absolute;
   content: '';
   height: 100%;
@@ -155,5 +164,21 @@
 
 .content-container {
   padding-left: 220px;
+
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #5DA3FA;
+}
+
+.flex-container > div {
+
+  width: 30%;
+  height: auto;
+  margin: 1em;
+  text-align: center;
+
 
 }

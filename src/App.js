@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 
 
 import {Route, BrowserRouter as Router, Switch, Link, PropsRoute } from "react-router-dom";
-import {Nav, NavDropdown, Navbar, NavLink, NavItem, Container,FormControl,Button} from "react-bootstrap";
+import {Nav, NavDropdown, Navbar, NavLink, NavItem, Container,FormControl,Button,Toast} from "react-bootstrap";
 
 import Greet from "./Components/Greet";
 import Welcome from "./Components/Welcome";
@@ -28,13 +28,15 @@ import OrgSideBar from "./Components/OrgSideBar";
 import './App.css';
 import UserList from "./Components/UserList";
 import HigherOrderComponent from "./Components/HigherOrderComponent";
+import ProjectToastComponent from "./Components/CommonComponent/ProjectToastComponent";
+import TodoList from "./Components/TodoList";
 
 function App() {
     return (
         <div className="App">
             <Router>
 
-                <Container>
+                <Container className={"container"}>
                     <div className="sidebar-container">
                         <div className="sidebar-logo">
                             Project Name
@@ -42,8 +44,8 @@ function App() {
                         <ul className="sidebar-navigation">
                             <li className="header">Navigation</li>
                             <li>
-                                <a href="/UserList">
-                                    <i className="fa fa-home" aria-hidden="true"></i> Homepage
+                                <a href="/ToDoList">
+                                    <i className="fa fa-home" aria-hidden="true"></i> MY ACTIVITIES
                                 </a>
                             </li>
                             <li>
@@ -105,26 +107,13 @@ function App() {
                     {/*    </Navbar.Collapse>*/}
                     {/*</Navbar>*/}
 
-                    <Navbar bg="primary" variant="dark">
-                        <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-                        <Nav className="mr-auto">
-                            <Nav.Link href="#home">Home</Nav.Link>
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
-                        </Nav>
-                        <Form inline>
-                            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-                            <Button variant="outline-light">Search</Button>
-                        </Form>
-                    </Navbar>
-
                     <div className="content-container shadow-lg p-3 mb-5 bg-white rounded">
 
                         <div className="container-fluid">
 
                             <Switch>
                                 <Route path="/GreetFunctionComponent" children={<Greet name={"Vaibhav"}/>}></Route>
-                                <Route path="/WelcomeClassComponent" component={Welcome}></Route>
+                                <Route path="/ToDoList" component={TodoList}></Route>
                                 <Route path="/StateExampleComponent" component={Message}></Route>
                                 <Route path="/SetStateCounter" component={Counter}></Route>
                                 <Route path="/EventBindInClassComponent" component={EventBind}></Route>
