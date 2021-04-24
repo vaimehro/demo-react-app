@@ -6,7 +6,7 @@ import {Link} from "react-router-dom";
 const TodoList = () => {
     const [listOfToDos, setListOfToDos] = useState([]);
     useEffect(() => {
-        axios.get("http://jsonplaceholder.typicode.com/todos")
+        axios.get("https://jsonplaceholder.typicode.com/posts")
             .then(response => {
                 setListOfToDos(response.data);
 
