@@ -10,7 +10,7 @@ import Counter from "./Components/Counter";
 import FunctionClick from "./Components/FunctionClick";
 import ClassClick from "./Components/ClassClick";
 import EventBind from "./Components/EventBind";
-import ParentComponent from "./Components/ParentComponent";
+import ParentComponent from "./Components/ParentComponent.";
 import NameList from "./Components/NameList";
 import Form from "./Components/Form";
 import LifeCycleA from "./Components/LifeCycleA";
@@ -114,7 +114,7 @@ function App() {
                         <div className="container-fluid">
 
                             <Switch>
-                                <Route path="/GreetFunctionComponent" children={<Greet name={"Vaibhav"}/>}></Route>
+                                {/* <Route path="/GreetFunctionComponent" children={<Greet name={"Vaibhav"}/>}></Route>*/}
                                 <Route path="/TodoList" component={TodoList}></Route>
                                 <Route path="/StateExampleComponent" component={Message}></Route>
                                 <Route path="/SetStateCounter" component={Counter}></Route>
