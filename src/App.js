@@ -49,7 +49,7 @@ function App() {
                         <ul className="sidebar-navigation">
                             <li className="header">Navigation</li>
                             <li>
-                                <a href="ToDoList">
+                                <a href="TodoList">
                                     <i className="fa fa-home" aria-hidden="true"></i> MY ACTIVITIES
                                 </a>
                             </li>
@@ -118,7 +118,7 @@ function App() {
 
                             <Switch>
                                 <Route path="/GreetFunctionComponent" children={<Greet name={"Vaibhav"}/>}></Route>
-                                <Route path="/ToDoList" component={TodoList}></Route>
+                                <Route path="/TodoList" component={TodoList}></Route>
                                 <Route path="/StateExampleComponent" component={Message}></Route>
                                 <Route path="/SetStateCounter" component={Counter}></Route>
                                 <Route path="/EventBindInClassComponent" component={EventBind}></Route>
