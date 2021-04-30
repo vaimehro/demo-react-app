@@ -46,9 +46,7 @@ function App() {
                         <ul className="sidebar-navigation">
                             <li className="header">Navigation</li>
                             <li>
-                                <a href="TodoList">
-                                    <i className="fa fa-home" aria-hidden="true"></i> MY ACTIVITIES
-                                </a>
+                                <Link to="/TodoList">ACT</Link>
                             </li>
                             <li>
                                 <a href="#">
