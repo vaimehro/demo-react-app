@@ -1,11 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
-
-
 import {Route, BrowserRouter as Router, Switch, Link, PropsRoute } from "react-router-dom";
 import {Nav, NavDropdown, Navbar, NavLink, NavItem, Container,FormControl,Button,Toast} from "react-bootstrap";
-
 import Greet from "./Components/Greet";
 import Welcome from "./Components/Welcome";
 import Message from "./Components/Message";
