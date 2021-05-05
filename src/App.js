@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Route, BrowserRouter as Router, Switch, Link, PropsRoute } from "react-router-dom";
-import {Nav, NavDropdown, Navbar, NavLink, NavItem, Container,FormControl,Button,Toast} from "react-bootstrap";
+import {Nav, NavDropdown, Navbar, NavLink, NavItem, Container,FormControl,Button,Toast,} from "react-bootstrap";
 import Greet from "./Components/Greet";
 import Welcome from "./Components/Welcome";
 import Message from "./Components/Message";
@@ -27,87 +27,44 @@ import UserList from "./Components/UserList";
 import HigherOrderComponent from "./Components/HigherOrderComponent";
 import ProjectToastComponent from "./Components/CommonComponent/ProjectToastComponent";
 import TodoList from "./Components/TodoList";
+import Toolbar from "./Components/Toolbar/Toolbar"
+import SideDrawer from './Components/SideDrawer/SideDrawer';
+import BackDrop from './Components/BackDrop/BackDrop';
+
 
 function App() {
+
+
+    const [sideDrawerOpen, setSideDrawerOpen] = useState(false);
+
+     const drawerToggleClickHandler=()=>{
+        setSideDrawerOpen(sideDrawerOpen=>!sideDrawerOpen);
+     }
+     const backDropClickHandler=()=>{
+        setSideDrawerOpen(false);
+     }
+     let backdrop;
+     let sidebar;
+     if(sideDrawerOpen){
+        backdrop=<BackDrop click={backDropClickHandler}/> 
+    
+     }
+
+     const navList=[{path:'TodoList',title:'My Activities'},{path:'UserList',title:'People'},{path:'TodoList',title:'Duplicate Activities'}]
     return (
-        <div className="App">
-
-
-
-
-
+        <div className="App" style={{height:'100%'}}>
+            
             <Router>
+            <SideDrawer show={sideDrawerOpen} navList={navList}/>
+            <Toolbar drawerClickHandler={drawerToggleClickHandler}/>
+            {sidebar}
+            {backdrop}
 
                 <Container className={"container"}>
-                    <div className="sidebar-container">
-                        <div className="sidebar-logo">
-                            Project Name
-                        </div>
-                        <ul className="sidebar-navigation">
-                            <li className="header">Navigation</li>
-                            <li>
-                                <Link to="/TodoList">ACT</Link>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-tachometer" aria-hidden="true"></i> Dashboard
-                                </a>
-                            </li>
-                            <li className="header">Another Menu</li>
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-users" aria-hidden="true"></i> Friends
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-cog" aria-hidden="true"></i> Settings
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i className="fa fa-info-circle" aria-hidden="true"></i> Information
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    {/*<Navbar collapseOnSelect bg="dark" variant="dark">*/}
-                    {/*    <Navbar.Brand href="#home">My Site</Navbar.Brand>*/}
-                    {/*    <Navbar.Toggle aria-controls="basic-navbar-nav"/>*/}
+                   
+       
 
-                    {/*    <Navbar.Collapse id="basic-navbar-nav" >*/}
-                    {/*        <Nav fill variant="tabs" className="mr-auto">*/}
-                    {/*            <NavLink as={Link} to="/UserList">User API</NavLink>*/}
-                    {/*            <Nav.Link as={Link}  to="/GreetFunctionComponent">Home </Nav.Link>*/}
-                    {/*            <Nav.Link as={Link}  to="/WelcomeClassComponent">Link</Nav.Link>*/}
-                    {/*            <NavLink as={Link} to="/GreetFunctionComponent">See Function Component Greetings</NavLink>*/}
-                    {/*            <NavLink as={Link} to="/WelcomeClassComponent">See Class Component Welcome</NavLink>*/}
-                    {/*            <NavLink as={Link} to="/StateExampleComponent">Change State Example With Subscribe Button</NavLink>*/}
-                    {/*            <NavLink as={Link} to="/SetStateCounter">Counter Using Set State and Previous State !!</NavLink>*/}
-                    {/*            <NavDropdown title="Important Links"  id="collasible-nav-dropdown" >*/}
-                    {/*                <NavLink as={Link} to="/EventBindInClassComponent">Event Bind In Class Component</NavLink>*/}
-                    {/*                <NavDropdown.Divider />*/}
-                    {/*                <NavLink as={Link} to="/AccessFunctionParentComponentFromChildComponent">*/}
-                    {/*                    Access Function f Parent Component From Child Component*/}
-                    {/*                </NavLink>*/}
-                    {/*                <NavDropdown.Divider />*/}
-                    {/*                <NavLink as={Link} to="/ListRenderingComponent">*/}
-                    {/*                    List Rendering By Creating Single Component as Person and Re using It in Person List*/}
-                    {/*                </NavLink>*/}
-                    {/*                <NavDropdown.Divider />*/}
-                    {/*                <NavLink as={Link} to="/Form"> Form Elements </NavLink>*/}
-                    {/*                <NavLink as={Link} to="/LifeCycleA">Check Order of Mounting Phase Method</NavLink>*/}
-                    {/*                <NavLink as={Link} to="/FragmentDemo">Fragment Demo, Use &lt;&gt; &lt;/&gt; </NavLink>*/}
-                    {/*                <NavLink as={Link} to="/PortalParent">Portal Demo with Modal</NavLink>*/}
-                    {/*                <NavLink as={Link} to="/HOCExample">HOC Example </NavLink>*/}
-                    {/*                <NavLink as={Link} to="/ContextApi">Context Api </NavLink>*/}
-
-                    {/*            </NavDropdown>*/}
-                    {/*        </Nav>*/}
-                    {/*    </Navbar.Collapse>*/}
-                    {/*</Navbar>*/}
-
-                    <div className="content-container shadow-lg p-3 mb-5 bg-white rounded">
+                    <div className="content-container shadow-lg p-3 mb-6 bg-white rounded">
 
                         <div className="container-fluid">
 
@@ -136,7 +93,7 @@ function App() {
                 </Container>
 
             </Router>
-            <HigherOrderComponent></HigherOrderComponent>
+            
 
 
 
