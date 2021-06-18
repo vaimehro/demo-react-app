@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import ProjectToastComponent from "./CommonComponent/ProjectToastComponent";
+import ProjectToastComponent from "./CommonComponents/ProjectToastComponent";
 import {Link} from "react-router-dom";
 
 const TodoList = () => {

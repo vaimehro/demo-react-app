@@ -2,15 +2,18 @@ import React from 'react';
 import { NavItem } from 'react-bootstrap';
 import './SideDrawer.css';
 const sideDrawer=props =>{
-    let drawerClasses ='side-drawer';
+    let drawerClasses ='side-drawer sidebar-container';
     if(props.show){
-        drawerClasses='side-drawer open';
+        drawerClasses='side-drawer open sidebar-container';
     }
     return(
     <nav className={drawerClasses}>
-        <ul>{
+        <ul className="sidebar-navigation ">
+        <li className="header list-group-item">Navigation</li>
+            {
             
-            props.navList.map(item=>(<li><a href={item.path}>{item.title}</a></li>))
+            
+            props.navList.map(item=>(<li className="list-group-item"><a href={item.path}>{item.title}</a></li>))
         }      
 
         </ul>
@@ -18,3 +21,4 @@ const sideDrawer=props =>{
     )
 };
 export default sideDrawer;
+
