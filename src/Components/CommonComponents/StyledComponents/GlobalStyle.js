@@ -11,7 +11,7 @@ const GlobalStyle = createGlobalStyle`
  }
 
  body {
-  background: red;
+ 
  }
 `
 
