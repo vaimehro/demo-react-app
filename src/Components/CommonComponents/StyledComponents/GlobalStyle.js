@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
  html {
-  font-size: 80%;
+  font-size: 50%;
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
  }
