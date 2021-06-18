@@ -5,13 +5,13 @@ const GlobalStyle = createGlobalStyle`
   }
 
  html {
-  font-size: 50%;
+  font-size: 80%;
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
  }
 
  body {
- 
+  background: rgb(248,248,255);
  }
 `
 
