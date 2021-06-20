@@ -22,7 +22,7 @@ jobs:
       run: npm install
     - name: Deploy to GH Pages
       run: |
-        git config --global user.email vaibhavmehrotrapccs@gmail.com
-        git config --global user.name  vaibhav mehrotra
+        git config --global user.email "vaibhavmehrotrapccs@gmail.com"
+        git config --global user.name  "vaibhav mehrotra"
         git remote set-url origin https://${{secrets.ACTIONS_DEPLOY_ACCESS_TOKEN}}@github.com/vaimehro/demo-react-app.git
         npm run deploy
